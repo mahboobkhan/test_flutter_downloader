@@ -1,3 +1,4 @@
+import 'package:downloader/downloading/DownloadedFilesProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -7,7 +8,10 @@ import 'downloading/VideoInfoProvider.dart';
 
 void main() {
   runApp(
-    const MyApp(),
+    ChangeNotifierProvider(
+      create: (context) => DownloadedFilesProvider(),
+      child: const MyApp(),
+    ),
   );
 }
 

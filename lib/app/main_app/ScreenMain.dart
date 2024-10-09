@@ -5,7 +5,6 @@ import '../../downloading/DownloadProvider.dart';
 import '../../downloading/VideoInfoProvider.dart';
 import '../items/VideoInfo.dart';
 
-
 class ScreenMain extends StatelessWidget {
   final TextEditingController urlController = TextEditingController(
       text: 'https://www.youtube.com/watch?v=AkL9d2BEs3A');
@@ -78,9 +77,9 @@ class ScreenMain extends StatelessWidget {
           leading: videoInfo.thumbnail == "N/A"
               ? Icon(Icons.edit)
               : Image.network(
-            videoInfo.formats[index]['url'],
-            fit: BoxFit.cover,
-          ),
+                  videoInfo.formats[index]['url'],
+                  fit: BoxFit.cover,
+                ),
           title: Text('($index) ${videoInfo.title}'),
           subtitle: Text(
               '${videoInfo.formats[index]['vcodec']} / ${videoInfo.formats[index]['acodec']} / ${videoInfo.formats[index]['ext']}'),
@@ -96,9 +95,11 @@ class ScreenMain extends StatelessWidget {
     );
   }
 
-  void _showDownloadBottomSheet(BuildContext context, String url, String title) {
+  void _showDownloadBottomSheet(
+      BuildContext context, String url, String title) {
     // Get the DownloadProvider instance
-    final downloadProvider = Provider.of<DownloadProvider>(context, listen: false);
+    final downloadProvider =
+        Provider.of<DownloadProvider>(context, listen: false);
 
     // Start the download
     downloadProvider.downloadFile(url, title);
@@ -123,10 +124,10 @@ class ScreenMain extends StatelessWidget {
                   const SizedBox(height: 16),
                   LinearProgressIndicator(
                     value: downloadProvider.isDownloading
-                        ? (double.tryParse(
-                        downloadProvider.progress.replaceAll('%', '')) ??
-                        0) /
-                        100
+                        ? (double.tryParse(downloadProvider.progress
+                                    .replaceAll('%', '')) ??
+                                0) /
+                            100
                         : 1.0, // Show 1.0 when complete
                   ),
                   const SizedBox(height: 16),
@@ -139,7 +140,8 @@ class ScreenMain extends StatelessWidget {
                         onPressed: downloadProvider.isPaused
                             ? () => downloadProvider.resumeDownload(url, title)
                             : () => downloadProvider.pauseDownload(),
-                        child: Text(downloadProvider.isPaused ? 'Resume' : 'Pause'),
+                        child: Text(
+                            downloadProvider.isPaused ? 'Resume' : 'Pause'),
                       ),
                       ElevatedButton(
                         onPressed: () {

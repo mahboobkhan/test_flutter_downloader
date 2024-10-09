@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       length: 3, // Number of tabs
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Video Downloader'),
+          title: const Text('VID_Lab'),
           bottom: const TabBar(
             tabs: [
               Tab(text: 'Home'),
