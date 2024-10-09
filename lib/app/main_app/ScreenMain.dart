@@ -73,9 +73,13 @@ class ScreenMain extends StatelessWidget {
     return ListView.builder(
       itemCount: videoInfo.formats.length,
       itemBuilder: (BuildContext context, int index) {
+        bool isDownloading = downloadProvider.downloadingIndex == index;
+        bool isAnotherDownloading = downloadProvider.downloadingIndex != null &&
+            downloadProvider.downloadingIndex != index;
+
         return ListTile(
           leading: videoInfo.thumbnail == "N/A"
-              ? Icon(Icons.edit)
+              ? const Icon(Icons.edit)
               : Image.network(
                   videoInfo.formats[index]['url'],
                   fit: BoxFit.cover,
@@ -84,27 +88,28 @@ class ScreenMain extends StatelessWidget {
           subtitle: Text(
               '${videoInfo.formats[index]['vcodec']} / ${videoInfo.formats[index]['acodec']} / ${videoInfo.formats[index]['ext']}'),
           trailing: ElevatedButton(
-            onPressed: () {
-              _showDownloadBottomSheet(
-                  context, videoInfo.formats[index]['url'], videoInfo.title);
-            },
-            child: const Text('Download'),
+            onPressed: isAnotherDownloading
+                ? null
+                : () {
+                    downloadProvider.downloadFile(
+                        videoInfo.formats[index]['url'],
+                        videoInfo.title,
+                        index);
+                  },
+            child: isDownloading
+                ? Text('Downloading ${downloadProvider.progress}')
+                : Text('Download'),
           ),
         );
       },
     );
   }
+}
 
-  void _showDownloadBottomSheet(
-      BuildContext context, String url, String title) {
-    // Get the DownloadProvider instance
-    final downloadProvider =
-        Provider.of<DownloadProvider>(context, listen: false);
-
-    // Start the download
-    downloadProvider.downloadFile(url, title);
-
-    showModalBottomSheet(
+/*
+*
+*
+*   showModalBottomSheet(
       context: context,
       isDismissible: false,
       builder: (BuildContext context) {
@@ -159,5 +164,10 @@ class ScreenMain extends StatelessWidget {
         );
       },
     );
-  }
-}
+*
+*
+*
+*
+*
+*
+* */

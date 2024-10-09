@@ -6,12 +6,14 @@ import 'package:path_provider/path_provider.dart';
 class DownloadProvider with ChangeNotifier {
   bool isDownloading = false;
   bool isPaused = false;
+  int? _downloadingIndex;
   String progress = '0%';
   CancelToken? cancelToken; // Used to pause or cancel download
   Dio dio = Dio(); // Dio instance
+  int? get downloadingIndex => _downloadingIndex;
 
   // Start the download
-  Future<void> downloadFile(String url, String title) async {
+  Future<void> downloadFile(String url, String title, int index) async {
     if (isDownloading) {
       print("A download is already in progress.");
       return;
@@ -22,6 +24,8 @@ class DownloadProvider with ChangeNotifier {
       isDownloading = true;
       isPaused = false;
       progress = '0%';
+      _downloadingIndex = index;  // Set the current downloading index
+
       print("Starting download: $url");
 
       notifyListeners(); // Notify the listeners that download started
@@ -59,10 +63,13 @@ class DownloadProvider with ChangeNotifier {
       isDownloading = false;
       progress = "Download complete";
       print("Download complete: $title");
+      _downloadingIndex = null; // Reset after completion
+
       notifyListeners(); // Notify listeners when download completes
     } catch (exception) {
       print("Download error: $exception");
       isDownloading = false;
+      _downloadingIndex = null; // Reset after completion
       progress = '0%'; // Reset progress on error
       notifyListeners(); // Notify listeners on download error
     }
@@ -74,6 +81,8 @@ class DownloadProvider with ChangeNotifier {
     progress = '0%';
     isPaused = false;
     cancelToken = null;
+    _downloadingIndex = null; // Reset after completion
+
     notifyListeners();
   }
 
@@ -83,16 +92,17 @@ class DownloadProvider with ChangeNotifier {
       cancelToken!.cancel("Download paused");
       isPaused = true;
       print("Download paused");
+      _downloadingIndex = null; // Reset after completion
       notifyListeners();
     }
   }
 
   // Resume the download
-  Future<void> resumeDownload(String url, String title) async {
+  Future<void> resumeDownload(String url, String title,int index) async {
     if (isPaused) {
       isPaused = false;
       print("Resuming download...");
-      downloadFile(url, title); // Re-initiate the download
+      downloadFile(url, title,index); // Re-initiate the download
     }
   }
 
