@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 
 import '../../downloading/DownloadProvider.dart';
 import '../../downloading/VideoInfoProvider.dart';
+import '../../downloading/ticktok/TickTokProfile.dart';
+import '../../downloading/ticktok/ticktok.dart';
 import '../items/VideoInfo.dart';
 
 class ScreenMain extends StatelessWidget {
@@ -33,7 +35,8 @@ class ScreenMain extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () async {
-                    videoInfoProvider.fetchVideoInfo(urlController.text);
+                    scrapeTikTokUserVideos("umair_____rajpoot3");
+                   // videoInfoProvider.fetchVideoInfo(urlController.text);
                   },
                   child: const Text('Fetch Video Info'),
                 ),
