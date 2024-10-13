@@ -78,7 +78,10 @@ class TikTok {
 
     if (cut) {
       try {
-        Artist dataLog = Artist.fromJson(dataResponse);
+        print("NowProfile $dataResponse");
+
+
+    /*    Artist dataLog = Artist.fromJson(dataResponse);
         dataLog.data?.itemInfo?.itemStruct?.video?.bitrateInfo?.forEach((bitrate) {
           print('video H: ${bitrate.playAddr?.height}, video W: ${bitrate.playAddr?.width}');
           bitrate.playAddr?.urlList?.forEach((urlList) {
@@ -86,7 +89,7 @@ class TikTok {
           });
 
         });
-
+*/
         return {
           'error': false,
           'data': dataResponse,
@@ -107,7 +110,8 @@ class TikTok {
 
 void mainTickTok() async {
   final tiktok = TikTok(
-    url: 'https://www.tiktok.com/@1_nabeel_10/video/7335045031255870725?q=image%20post&t=1728788961659',
+    url: 'https://www.tiktok.com/@rumi._.edit',
+   // url: 'https://www.tiktok.com/@1_nabeel_10/video/7335045031255870725?q=image%20post&t=1728788961659',
     cut: true, // If you want to process the data further.
   );
   final videoData = await tiktok.getVideos();
