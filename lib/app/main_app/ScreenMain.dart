@@ -7,7 +7,7 @@ import '../items/VideoInfo.dart';
 
 class ScreenMain extends StatelessWidget {
   final TextEditingController urlController = TextEditingController(
-      text: 'https://www.youtube.com/watch?v=AkL9d2BEs3A');
+      text: 'https://www.dailymotion.com/video/x96znmc');
 
   @override
   Widget build(BuildContext context) {
@@ -74,8 +74,10 @@ class ScreenMain extends StatelessWidget {
       itemCount: videoInfo.formats.length,
       itemBuilder: (BuildContext context, int index) {
         bool isDownloading = downloadProvider.downloadingIndex == index;
-        bool isAnotherDownloading = downloadProvider.downloadingIndex != null &&
-            downloadProvider.downloadingIndex != index;
+        bool isAnotherDownloading = downloadProvider.downloadingIndex != null && downloadProvider.downloadingIndex != index;
+
+        bool audioFounded = videoInfo.formats[index]['has_audio'] ?? false;
+        bool videoFounded = videoInfo.formats[index]['has_video'] ?? false;
 
         return ListTile(
           leading: videoInfo.thumbnail == "N/A"
@@ -105,69 +107,3 @@ class ScreenMain extends StatelessWidget {
     );
   }
 }
-
-/*
-*
-*
-*   showModalBottomSheet(
-      context: context,
-      isDismissible: false,
-      builder: (BuildContext context) {
-        return Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Consumer<DownloadProvider>(
-            builder: (context, downloadProvider, child) {
-              return Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    downloadProvider.isDownloading
-                        ? 'Downloading $title...'
-                        : 'Download Complete!',
-                    style: const TextStyle(fontSize: 16),
-                  ),
-                  const SizedBox(height: 16),
-                  LinearProgressIndicator(
-                    value: downloadProvider.isDownloading
-                        ? (double.tryParse(downloadProvider.progress
-                                    .replaceAll('%', '')) ??
-                                0) /
-                            100
-                        : 1.0, // Show 1.0 when complete
-                  ),
-                  const SizedBox(height: 16),
-                  Text('Progress: ${downloadProvider.progress}'),
-                  const SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ElevatedButton(
-                        onPressed: downloadProvider.isPaused
-                            ? () => downloadProvider.resumeDownload(url, title)
-                            : () => downloadProvider.pauseDownload(),
-                        child: Text(
-                            downloadProvider.isPaused ? 'Resume' : 'Pause'),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          downloadProvider.cancelDownload();
-                          Navigator.pop(context); // Close the bottom sheet
-                        },
-                        child: const Text('Cancel'),
-                      ),
-                    ],
-                  ),
-                ],
-              );
-            },
-          ),
-        );
-      },
-    );
-*
-*
-*
-*
-*
-*
-* */

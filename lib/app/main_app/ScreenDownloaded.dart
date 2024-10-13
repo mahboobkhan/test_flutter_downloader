@@ -70,7 +70,9 @@ class ScreenDownloaded extends StatelessWidget {
                       });
             },
           ),
-        ));
+        )
+
+    );
   }
 
   void _openFile(String filePath) async {

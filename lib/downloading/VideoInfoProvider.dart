@@ -6,15 +6,17 @@ import '../app/items/VideoInfo.dart';
 
 enum VideoInfoState { initial, loading, success, error }
 
-
 class VideoInfoProvider with ChangeNotifier {
   VideoInfoState _state = VideoInfoState.initial;
+
   VideoInfoState get state => _state;
 
   VideoInfo? _videoInfo;
+
   VideoInfo? get videoInfo => _videoInfo;
 
   String _errorMessage = '';
+
   String get errorMessage => _errorMessage;
 
   // Method to fetch video information
@@ -24,7 +26,8 @@ class VideoInfoProvider with ChangeNotifier {
 
     try {
       final response = await http.post(
-        Uri.parse('http://192.168.10.6:5000/download'),//http://192.168.10.6:5000
+        Uri.parse('http://192.168.10.5:5000/download'),
+        //http://192.168.10.6:5000
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({"url": url}),
       );
