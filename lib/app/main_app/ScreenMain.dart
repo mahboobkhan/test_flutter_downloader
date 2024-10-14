@@ -35,7 +35,7 @@ class ScreenMain extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () async {
-                    mainTickTok();
+                    mainprofile();
                    // videoInfoProvider.fetchVideoInfo(urlController.text);
                   },
                   child: const Text('Fetch Video Info'),
