@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../downloading/DownloadProvider.dart';
 import '../../downloading/VideoInfoProvider.dart';
 import '../../downloading/ticktok/TickTokProfile.dart';
@@ -104,7 +103,7 @@ class ScreenMain extends StatelessWidget {
                   },
             child: isDownloading
                 ? Text('Downloading ${downloadProvider.progress}')
-                : Text('Download'),
+                : const Text('Download'),
           ),
         );
       },
