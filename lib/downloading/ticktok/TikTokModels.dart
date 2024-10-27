@@ -805,7 +805,7 @@ class Video {
   List<String>? shareCover;
   List<dynamic>? subtitleInfos;
   String? videoQuality;
-  VolumeInfo? volumeInfo;
+  // VolumeInfo? volumeInfo;
   int? width;
   Map<String, String>? zoomCover;
 
@@ -831,7 +831,7 @@ class Video {
     this.shareCover,
     this.subtitleInfos,
     this.videoQuality,
-    this.volumeInfo,
+    // this.volumeInfo,
     this.width,
     this.zoomCover,
   });
@@ -869,9 +869,7 @@ class Video {
             ? []
             : List<dynamic>.from(json["subtitleInfos"]!.map((x) => x)),
         videoQuality: json["videoQuality"],
-        volumeInfo: json["volumeInfo"] == null
-            ? null
-            : VolumeInfo.fromJson(json["volumeInfo"]),
+        // volumeInfo: json["volumeInfo"] == null ? null : VolumeInfo.fromJson(json["volumeInfo"]),
         width: json["width"],
         zoomCover: Map.from(json["zoomCover"]!)
             .map((k, v) => MapEntry<String, String>(k, v)),
@@ -905,7 +903,7 @@ class Video {
             ? []
             : List<dynamic>.from(subtitleInfos!.map((x) => x)),
         "videoQuality": videoQuality,
-        "volumeInfo": volumeInfo?.toJson(),
+        // "volumeInfo": volumeInfo?.toJson(),
         "width": width,
         "zoomCover":
             Map.from(zoomCover!).map((k, v) => MapEntry<String, dynamic>(k, v)),
@@ -1007,7 +1005,7 @@ class PlayAddr {
       };
 }
 
-class VolumeInfo {
+/*class VolumeInfo {
   double? loudness;
   int? peak;
 
@@ -1030,7 +1028,7 @@ class VolumeInfo {
         "Loudness": loudness,
         "Peak": peak,
       };
-}
+}*/
 
 class ShareMeta {
   String? desc;

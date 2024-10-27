@@ -1,8 +1,10 @@
 import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'package:html/parser.dart';
-import 'TikTokModels.dart'; // For parsing HTML.
+
 import 'package:flutter/material.dart';
+import 'package:html/parser.dart';
+import 'package:http/http.dart' as http;
+
+import 'TikTokModels.dart'; // For parsing HTML.
 
 class TikTokProvider extends ChangeNotifier {
   bool _isLoading = false;
@@ -66,6 +68,7 @@ class TikTokProvider extends ChangeNotifier {
       }
     } catch (e) {
       _error = 'Error: ${e.toString()}';
+      print('video Error: ${e.toString()}');
     } finally {
       _isLoading = false;
       notifyListeners();

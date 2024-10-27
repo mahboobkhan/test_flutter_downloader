@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../../downloading/DownloadProvider.dart';
 import '../../downloading/ticktok/ticktok.dart';
 
 class TikTokScreen extends StatelessWidget {
   final TextEditingController urlController = TextEditingController(
     text:
-        'https://www.tiktok.com/@1_nabeel_10/video/7335045031255870725?q=image%20post&t=1728788961659',
+        'https://www.tiktok.com/@goldstatus81/video/7428545900710006023?_r=1&_t=8qtZi3tsEvX',
   );
 
   TikTokScreen({super.key});
