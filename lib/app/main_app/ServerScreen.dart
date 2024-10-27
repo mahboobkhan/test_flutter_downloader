@@ -68,7 +68,8 @@ class ServerScreen extends StatelessWidget {
   }
 
   Widget _buildVideoInfo(BuildContext context, VideoInfo videoInfo,
-      DownloadProvider downloadProvider) {
+      DownloadProvider downloadProvider)
+  {
     return ListView.builder(
       itemCount: videoInfo.formats.length,
       itemBuilder: (BuildContext context, int index) {

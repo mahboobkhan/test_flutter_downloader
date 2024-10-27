@@ -56,7 +56,7 @@ class TikTokProvider extends ChangeNotifier {
             print('video webappVideoDetail: $webappVideoDetail}');
             Data data = Data.fromJson(webappVideoDetail);
             _result = data;
-            data?.itemInfo?.itemStruct?.video?.bitrateInfo?.forEach((bitrate) {
+            _result?.itemInfo?.itemStruct?.video?.bitrateInfo?.forEach((bitrate) {
               print(
                   'video H: ${bitrate.playAddr?.height}, video W: ${bitrate.playAddr?.width}');
               bitrate.playAddr?.urlList?.forEach((urlList) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../downloading/DownloadProvider.dart';
+import '../../downloading/ticktok/TikTokModels.dart';
 import '../../downloading/ticktok/ticktok.dart';
 
 class TikTokScreen extends StatelessWidget {
@@ -22,6 +23,8 @@ class TikTokScreen extends StatelessWidget {
       child: Scaffold(
         body: Consumer2<TikTokProvider, DownloadProvider>(
             builder: (context, tiktokProvider, downloaderProvider, child) {
+          final videos = getVideos(tiktokProvider.result!);
+
           return Column(
             children: [
               Padding(
@@ -44,9 +47,32 @@ class TikTokScreen extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   const Text("Video data loaded"),
-                                  Text(
-                                      "Artist name: ${tiktokProvider.result?.itemInfo}"),
-                                  // Display additional Artist details as needed
+                                  ListView.builder(
+                                    shrinkWrap: true,
+                                    itemCount: videos?.length,
+                                    itemBuilder: (context, index) {
+                                      return Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                              'Height: ${videos?[index].playAddr?.height}, Width: ${videos?[index].playAddr?.width}'),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: videos?[index]
+                                                    .playAddr
+                                                    ?.urlList
+                                                    ?.map((url) =>
+                                                        Text('URL: $url'))
+                                                    .toList() ??
+                                                [],
+                                          ),
+                                          const Divider(),
+                                        ],
+                                      );
+                                    },
+                                  ),
                                 ],
                               )
                             : ElevatedButton(
@@ -65,13 +91,14 @@ class TikTokScreen extends StatelessWidget {
   }
 }
 
-/*class TikTokScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+List<BitrateInfo>? getVideos(Data _result) {
+  _result?.itemInfo?.itemStruct?.video?.bitrateInfo?.forEach((bitrate) {
+    print(
+        'video H: ${bitrate.playAddr?.height}, video W: ${bitrate.playAddr?.width}');
+    bitrate.playAddr?.urlList?.forEach((urlList) {
+      print('video uriList: $urlList');
+    });
+  });
 
-    return Scaffold(
-      appBar: AppBar(title: Text("TikTok Video Data")),
-      body:
-    );
-  }
-}*/
+  return _result?.itemInfo?.itemStruct?.video?.bitrateInfo;
+}

@@ -805,6 +805,7 @@ class Video {
   List<String>? shareCover;
   List<dynamic>? subtitleInfos;
   String? videoQuality;
+
   // VolumeInfo? volumeInfo;
   int? width;
   Map<String, String>? zoomCover;
