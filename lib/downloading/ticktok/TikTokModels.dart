@@ -20,23 +20,23 @@ class Artist {
   String toRawJson() => json.encode(toJson());
 
   factory Artist.fromJson(Map<String, dynamic> json) => Artist(
-    data: json["data"] == null ? null : Data.fromJson(json["data"]),
-    success: json["success"],
-    name: json["name"],
-    founded: json["founded"],
-    members: json["members"] == null
-        ? []
-        : List<String>.from(json["members"]!.map((x) => x)),
-  );
+        data: json["data"] == null ? null : Data.fromJson(json["data"]),
+        success: json["success"],
+        name: json["name"],
+        founded: json["founded"],
+        members: json["members"] == null
+            ? []
+            : List<String>.from(json["members"]!.map((x) => x)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "data": data?.toJson(),
-    "success": success,
-    "name": name,
-    "founded": founded,
-    "members":
-    members == null ? [] : List<dynamic>.from(members!.map((x) => x)),
-  };
+        "data": data?.toJson(),
+        "success": success,
+        "name": name,
+        "founded": founded,
+        "members":
+            members == null ? [] : List<dynamic>.from(members!.map((x) => x)),
+      };
 }
 
 class Data {
@@ -57,22 +57,22 @@ class Data {
   String toRawJson() => json.encode(toJson());
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(
-    itemInfo: json["itemInfo"] == null
-        ? null
-        : ItemInfo.fromJson(json["itemInfo"]),
-    shareMeta: json["shareMeta"] == null
-        ? null
-        : ShareMeta.fromJson(json["shareMeta"]),
-    statusCode: json["statusCode"],
-    statusMsg: json["statusMsg"],
-  );
+        itemInfo: json["itemInfo"] == null
+            ? null
+            : ItemInfo.fromJson(json["itemInfo"]),
+        shareMeta: json["shareMeta"] == null
+            ? null
+            : ShareMeta.fromJson(json["shareMeta"]),
+        statusCode: json["statusCode"],
+        statusMsg: json["statusMsg"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "itemInfo": itemInfo?.toJson(),
-    "shareMeta": shareMeta?.toJson(),
-    "statusCode": statusCode,
-    "statusMsg": statusMsg,
-  };
+        "itemInfo": itemInfo?.toJson(),
+        "shareMeta": shareMeta?.toJson(),
+        "statusCode": statusCode,
+        "statusMsg": statusMsg,
+      };
 }
 
 class ItemInfo {
@@ -88,14 +88,14 @@ class ItemInfo {
   String toRawJson() => json.encode(toJson());
 
   factory ItemInfo.fromJson(Map<String, dynamic> json) => ItemInfo(
-    itemStruct: json["itemStruct"] == null
-        ? null
-        : ItemStruct.fromJson(json["itemStruct"]),
-  );
+        itemStruct: json["itemStruct"] == null
+            ? null
+            : ItemStruct.fromJson(json["itemStruct"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "itemStruct": itemStruct?.toJson(),
-  };
+        "itemStruct": itemStruct?.toJson(),
+      };
 }
 
 class ItemStruct {
@@ -189,134 +189,134 @@ class ItemStruct {
   String toRawJson() => json.encode(toJson());
 
   factory ItemStruct.fromJson(Map<String, dynamic> json) => ItemStruct(
-    aigcDescription: json["AIGCDescription"],
-    isAigc: json["IsAigc"],
-    author: json["author"] == null ? null : Author.fromJson(json["author"]),
-    backendSourceEventTracking: json["backendSourceEventTracking"],
-    challenges: json["challenges"] == null
-        ? []
-        : List<Challenge>.from(
-        json["challenges"]!.map((x) => Challenge.fromJson(x))),
-    channelTags: json["channelTags"] == null
-        ? []
-        : List<dynamic>.from(json["channelTags"]!.map((x) => x)),
-    collected: json["collected"],
-    comments: json["comments"] == null
-        ? []
-        : List<dynamic>.from(json["comments"]!.map((x) => x)),
-    contents: json["contents"] == null
-        ? []
-        : List<Content>.from(
-        json["contents"]!.map((x) => Content.fromJson(x))),
-    createTime: json["createTime"],
-    desc: json["desc"],
-    digged: json["digged"],
-    diversificationId: json["diversificationId"],
-    diversificationLabels: json["diversificationLabels"] == null
-        ? []
-        : List<String>.from(json["diversificationLabels"]!.map((x) => x)),
-    duetDisplay: json["duetDisplay"],
-    duetEnabled: json["duetEnabled"],
-    effectStickers: json["effectStickers"] == null
-        ? []
-        : List<dynamic>.from(json["effectStickers"]!.map((x) => x)),
-    forFriend: json["forFriend"],
-    id: json["id"],
-    indexEnabled: json["indexEnabled"],
-    itemCommentStatus: json["itemCommentStatus"],
-    itemControl: json["item_control"] == null
-        ? null
-        : ItemControl.fromJson(json["item_control"]),
-    locationCreated: json["locationCreated"],
-    music: json["music"] == null ? null : Music.fromJson(json["music"]),
-    officalItem: json["officalItem"],
-    originalItem: json["originalItem"],
-    privateItem: json["privateItem"],
-    scheduleTime: json["scheduleTime"],
-    secret: json["secret"],
-    shareEnabled: json["shareEnabled"],
-    stats: json["stats"] == null ? null : Stats.fromJson(json["stats"]),
-    statsV2:
-    json["statsV2"] == null ? null : StatsV2.fromJson(json["statsV2"]),
-    stickersOnItem: json["stickersOnItem"] == null
-        ? []
-        : List<dynamic>.from(json["stickersOnItem"]!.map((x) => x)),
-    stitchDisplay: json["stitchDisplay"],
-    stitchEnabled: json["stitchEnabled"],
-    suggestedWords: json["suggestedWords"] == null
-        ? []
-        : List<dynamic>.from(json["suggestedWords"]!.map((x) => x)),
-    takeDown: json["takeDown"],
-    textExtra: json["textExtra"] == null
-        ? []
-        : List<TextExtra>.from(
-        json["textExtra"]!.map((x) => TextExtra.fromJson(x))),
-    video: json["video"] == null ? null : Video.fromJson(json["video"]),
-    warnInfo: json["warnInfo"] == null
-        ? []
-        : List<dynamic>.from(json["warnInfo"]!.map((x) => x)),
-  );
+        aigcDescription: json["AIGCDescription"],
+        isAigc: json["IsAigc"],
+        author: json["author"] == null ? null : Author.fromJson(json["author"]),
+        backendSourceEventTracking: json["backendSourceEventTracking"],
+        challenges: json["challenges"] == null
+            ? []
+            : List<Challenge>.from(
+                json["challenges"]!.map((x) => Challenge.fromJson(x))),
+        channelTags: json["channelTags"] == null
+            ? []
+            : List<dynamic>.from(json["channelTags"]!.map((x) => x)),
+        collected: json["collected"],
+        comments: json["comments"] == null
+            ? []
+            : List<dynamic>.from(json["comments"]!.map((x) => x)),
+        contents: json["contents"] == null
+            ? []
+            : List<Content>.from(
+                json["contents"]!.map((x) => Content.fromJson(x))),
+        createTime: json["createTime"],
+        desc: json["desc"],
+        digged: json["digged"],
+        diversificationId: json["diversificationId"],
+        diversificationLabels: json["diversificationLabels"] == null
+            ? []
+            : List<String>.from(json["diversificationLabels"]!.map((x) => x)),
+        duetDisplay: json["duetDisplay"],
+        duetEnabled: json["duetEnabled"],
+        effectStickers: json["effectStickers"] == null
+            ? []
+            : List<dynamic>.from(json["effectStickers"]!.map((x) => x)),
+        forFriend: json["forFriend"],
+        id: json["id"],
+        indexEnabled: json["indexEnabled"],
+        itemCommentStatus: json["itemCommentStatus"],
+        itemControl: json["item_control"] == null
+            ? null
+            : ItemControl.fromJson(json["item_control"]),
+        locationCreated: json["locationCreated"],
+        music: json["music"] == null ? null : Music.fromJson(json["music"]),
+        officalItem: json["officalItem"],
+        originalItem: json["originalItem"],
+        privateItem: json["privateItem"],
+        scheduleTime: json["scheduleTime"],
+        secret: json["secret"],
+        shareEnabled: json["shareEnabled"],
+        stats: json["stats"] == null ? null : Stats.fromJson(json["stats"]),
+        statsV2:
+            json["statsV2"] == null ? null : StatsV2.fromJson(json["statsV2"]),
+        stickersOnItem: json["stickersOnItem"] == null
+            ? []
+            : List<dynamic>.from(json["stickersOnItem"]!.map((x) => x)),
+        stitchDisplay: json["stitchDisplay"],
+        stitchEnabled: json["stitchEnabled"],
+        suggestedWords: json["suggestedWords"] == null
+            ? []
+            : List<dynamic>.from(json["suggestedWords"]!.map((x) => x)),
+        takeDown: json["takeDown"],
+        textExtra: json["textExtra"] == null
+            ? []
+            : List<TextExtra>.from(
+                json["textExtra"]!.map((x) => TextExtra.fromJson(x))),
+        video: json["video"] == null ? null : Video.fromJson(json["video"]),
+        warnInfo: json["warnInfo"] == null
+            ? []
+            : List<dynamic>.from(json["warnInfo"]!.map((x) => x)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "AIGCDescription": aigcDescription,
-    "IsAigc": isAigc,
-    "author": author?.toJson(),
-    "backendSourceEventTracking": backendSourceEventTracking,
-    "challenges": challenges == null
-        ? []
-        : List<dynamic>.from(challenges!.map((x) => x.toJson())),
-    "channelTags": channelTags == null
-        ? []
-        : List<dynamic>.from(channelTags!.map((x) => x)),
-    "collected": collected,
-    "comments":
-    comments == null ? [] : List<dynamic>.from(comments!.map((x) => x)),
-    "contents": contents == null
-        ? []
-        : List<dynamic>.from(contents!.map((x) => x.toJson())),
-    "createTime": createTime,
-    "desc": desc,
-    "digged": digged,
-    "diversificationId": diversificationId,
-    "diversificationLabels": diversificationLabels == null
-        ? []
-        : List<dynamic>.from(diversificationLabels!.map((x) => x)),
-    "duetDisplay": duetDisplay,
-    "duetEnabled": duetEnabled,
-    "effectStickers": effectStickers == null
-        ? []
-        : List<dynamic>.from(effectStickers!.map((x) => x)),
-    "forFriend": forFriend,
-    "id": id,
-    "indexEnabled": indexEnabled,
-    "itemCommentStatus": itemCommentStatus,
-    "item_control": itemControl?.toJson(),
-    "locationCreated": locationCreated,
-    "music": music?.toJson(),
-    "officalItem": officalItem,
-    "originalItem": originalItem,
-    "privateItem": privateItem,
-    "scheduleTime": scheduleTime,
-    "secret": secret,
-    "shareEnabled": shareEnabled,
-    "stats": stats?.toJson(),
-    "statsV2": statsV2?.toJson(),
-    "stickersOnItem": stickersOnItem == null
-        ? []
-        : List<dynamic>.from(stickersOnItem!.map((x) => x)),
-    "stitchDisplay": stitchDisplay,
-    "stitchEnabled": stitchEnabled,
-    "suggestedWords": suggestedWords == null
-        ? []
-        : List<dynamic>.from(suggestedWords!.map((x) => x)),
-    "takeDown": takeDown,
-    "textExtra": textExtra == null
-        ? []
-        : List<dynamic>.from(textExtra!.map((x) => x.toJson())),
-    "video": video?.toJson(),
-    "warnInfo":
-    warnInfo == null ? [] : List<dynamic>.from(warnInfo!.map((x) => x)),
-  };
+        "AIGCDescription": aigcDescription,
+        "IsAigc": isAigc,
+        "author": author?.toJson(),
+        "backendSourceEventTracking": backendSourceEventTracking,
+        "challenges": challenges == null
+            ? []
+            : List<dynamic>.from(challenges!.map((x) => x.toJson())),
+        "channelTags": channelTags == null
+            ? []
+            : List<dynamic>.from(channelTags!.map((x) => x)),
+        "collected": collected,
+        "comments":
+            comments == null ? [] : List<dynamic>.from(comments!.map((x) => x)),
+        "contents": contents == null
+            ? []
+            : List<dynamic>.from(contents!.map((x) => x.toJson())),
+        "createTime": createTime,
+        "desc": desc,
+        "digged": digged,
+        "diversificationId": diversificationId,
+        "diversificationLabels": diversificationLabels == null
+            ? []
+            : List<dynamic>.from(diversificationLabels!.map((x) => x)),
+        "duetDisplay": duetDisplay,
+        "duetEnabled": duetEnabled,
+        "effectStickers": effectStickers == null
+            ? []
+            : List<dynamic>.from(effectStickers!.map((x) => x)),
+        "forFriend": forFriend,
+        "id": id,
+        "indexEnabled": indexEnabled,
+        "itemCommentStatus": itemCommentStatus,
+        "item_control": itemControl?.toJson(),
+        "locationCreated": locationCreated,
+        "music": music?.toJson(),
+        "officalItem": officalItem,
+        "originalItem": originalItem,
+        "privateItem": privateItem,
+        "scheduleTime": scheduleTime,
+        "secret": secret,
+        "shareEnabled": shareEnabled,
+        "stats": stats?.toJson(),
+        "statsV2": statsV2?.toJson(),
+        "stickersOnItem": stickersOnItem == null
+            ? []
+            : List<dynamic>.from(stickersOnItem!.map((x) => x)),
+        "stitchDisplay": stitchDisplay,
+        "stitchEnabled": stitchEnabled,
+        "suggestedWords": suggestedWords == null
+            ? []
+            : List<dynamic>.from(suggestedWords!.map((x) => x)),
+        "takeDown": takeDown,
+        "textExtra": textExtra == null
+            ? []
+            : List<dynamic>.from(textExtra!.map((x) => x.toJson())),
+        "video": video?.toJson(),
+        "warnInfo":
+            warnInfo == null ? [] : List<dynamic>.from(warnInfo!.map((x) => x)),
+      };
 }
 
 class Author {
@@ -389,70 +389,70 @@ class Author {
   String toRawJson() => json.encode(toJson());
 
   factory Author.fromJson(Map<String, dynamic> json) => Author(
-    avatarLarger: json["avatarLarger"],
-    avatarMedium: json["avatarMedium"],
-    avatarThumb: json["avatarThumb"],
-    canExpPlaylist: json["canExpPlaylist"],
-    commentSetting: json["commentSetting"],
-    createTime: json["createTime"],
-    downloadSetting: json["downloadSetting"],
-    duetSetting: json["duetSetting"],
-    ftc: json["ftc"],
-    id: json["id"],
-    isAdVirtual: json["isADVirtual"],
-    isEmbedBanned: json["isEmbedBanned"],
-    nickNameModifyTime: json["nickNameModifyTime"],
-    nickname: json["nickname"],
-    nowInvitationCardUrl: json["nowInvitationCardUrl"],
-    openFavorite: json["openFavorite"],
-    privateAccount: json["privateAccount"],
-    recommendReason: json["recommendReason"],
-    relation: json["relation"],
-    roomId: json["roomId"],
-    secUid: json["secUid"],
-    secret: json["secret"],
-    shortId: json["shortId"],
-    signature: json["signature"],
-    stitchSetting: json["stitchSetting"],
-    suggestAccountBind: json["suggestAccountBind"],
-    ttSeller: json["ttSeller"],
-    uniqueId: json["uniqueId"],
-    uniqueIdModifyTime: json["uniqueIdModifyTime"],
-    verified: json["verified"],
-  );
+        avatarLarger: json["avatarLarger"],
+        avatarMedium: json["avatarMedium"],
+        avatarThumb: json["avatarThumb"],
+        canExpPlaylist: json["canExpPlaylist"],
+        commentSetting: json["commentSetting"],
+        createTime: json["createTime"],
+        downloadSetting: json["downloadSetting"],
+        duetSetting: json["duetSetting"],
+        ftc: json["ftc"],
+        id: json["id"],
+        isAdVirtual: json["isADVirtual"],
+        isEmbedBanned: json["isEmbedBanned"],
+        nickNameModifyTime: json["nickNameModifyTime"],
+        nickname: json["nickname"],
+        nowInvitationCardUrl: json["nowInvitationCardUrl"],
+        openFavorite: json["openFavorite"],
+        privateAccount: json["privateAccount"],
+        recommendReason: json["recommendReason"],
+        relation: json["relation"],
+        roomId: json["roomId"],
+        secUid: json["secUid"],
+        secret: json["secret"],
+        shortId: json["shortId"],
+        signature: json["signature"],
+        stitchSetting: json["stitchSetting"],
+        suggestAccountBind: json["suggestAccountBind"],
+        ttSeller: json["ttSeller"],
+        uniqueId: json["uniqueId"],
+        uniqueIdModifyTime: json["uniqueIdModifyTime"],
+        verified: json["verified"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "avatarLarger": avatarLarger,
-    "avatarMedium": avatarMedium,
-    "avatarThumb": avatarThumb,
-    "canExpPlaylist": canExpPlaylist,
-    "commentSetting": commentSetting,
-    "createTime": createTime,
-    "downloadSetting": downloadSetting,
-    "duetSetting": duetSetting,
-    "ftc": ftc,
-    "id": id,
-    "isADVirtual": isAdVirtual,
-    "isEmbedBanned": isEmbedBanned,
-    "nickNameModifyTime": nickNameModifyTime,
-    "nickname": nickname,
-    "nowInvitationCardUrl": nowInvitationCardUrl,
-    "openFavorite": openFavorite,
-    "privateAccount": privateAccount,
-    "recommendReason": recommendReason,
-    "relation": relation,
-    "roomId": roomId,
-    "secUid": secUid,
-    "secret": secret,
-    "shortId": shortId,
-    "signature": signature,
-    "stitchSetting": stitchSetting,
-    "suggestAccountBind": suggestAccountBind,
-    "ttSeller": ttSeller,
-    "uniqueId": uniqueId,
-    "uniqueIdModifyTime": uniqueIdModifyTime,
-    "verified": verified,
-  };
+        "avatarLarger": avatarLarger,
+        "avatarMedium": avatarMedium,
+        "avatarThumb": avatarThumb,
+        "canExpPlaylist": canExpPlaylist,
+        "commentSetting": commentSetting,
+        "createTime": createTime,
+        "downloadSetting": downloadSetting,
+        "duetSetting": duetSetting,
+        "ftc": ftc,
+        "id": id,
+        "isADVirtual": isAdVirtual,
+        "isEmbedBanned": isEmbedBanned,
+        "nickNameModifyTime": nickNameModifyTime,
+        "nickname": nickname,
+        "nowInvitationCardUrl": nowInvitationCardUrl,
+        "openFavorite": openFavorite,
+        "privateAccount": privateAccount,
+        "recommendReason": recommendReason,
+        "relation": relation,
+        "roomId": roomId,
+        "secUid": secUid,
+        "secret": secret,
+        "shortId": shortId,
+        "signature": signature,
+        "stitchSetting": stitchSetting,
+        "suggestAccountBind": suggestAccountBind,
+        "ttSeller": ttSeller,
+        "uniqueId": uniqueId,
+        "uniqueIdModifyTime": uniqueIdModifyTime,
+        "verified": verified,
+      };
 }
 
 class Challenge {
@@ -484,28 +484,28 @@ class Challenge {
   String toRawJson() => json.encode(toJson());
 
   factory Challenge.fromJson(Map<String, dynamic> json) => Challenge(
-    coverLarger: json["coverLarger"],
-    coverMedium: json["coverMedium"],
-    coverThumb: json["coverThumb"],
-    desc: json["desc"],
-    id: json["id"],
-    profileLarger: json["profileLarger"],
-    profileMedium: json["profileMedium"],
-    profileThumb: json["profileThumb"],
-    title: json["title"],
-  );
+        coverLarger: json["coverLarger"],
+        coverMedium: json["coverMedium"],
+        coverThumb: json["coverThumb"],
+        desc: json["desc"],
+        id: json["id"],
+        profileLarger: json["profileLarger"],
+        profileMedium: json["profileMedium"],
+        profileThumb: json["profileThumb"],
+        title: json["title"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "coverLarger": coverLarger,
-    "coverMedium": coverMedium,
-    "coverThumb": coverThumb,
-    "desc": desc,
-    "id": id,
-    "profileLarger": profileLarger,
-    "profileMedium": profileMedium,
-    "profileThumb": profileThumb,
-    "title": title,
-  };
+        "coverLarger": coverLarger,
+        "coverMedium": coverMedium,
+        "coverThumb": coverThumb,
+        "desc": desc,
+        "id": id,
+        "profileLarger": profileLarger,
+        "profileMedium": profileMedium,
+        "profileThumb": profileThumb,
+        "title": title,
+      };
 }
 
 class Content {
@@ -522,19 +522,19 @@ class Content {
   String toRawJson() => json.encode(toJson());
 
   factory Content.fromJson(Map<String, dynamic> json) => Content(
-    desc: json["desc"],
-    textExtra: json["textExtra"] == null
-        ? []
-        : List<TextExtra>.from(
-        json["textExtra"]!.map((x) => TextExtra.fromJson(x))),
-  );
+        desc: json["desc"],
+        textExtra: json["textExtra"] == null
+            ? []
+            : List<TextExtra>.from(
+                json["textExtra"]!.map((x) => TextExtra.fromJson(x))),
+      );
 
   Map<String, dynamic> toJson() => {
-    "desc": desc,
-    "textExtra": textExtra == null
-        ? []
-        : List<dynamic>.from(textExtra!.map((x) => x.toJson())),
-  };
+        "desc": desc,
+        "textExtra": textExtra == null
+            ? []
+            : List<dynamic>.from(textExtra!.map((x) => x.toJson())),
+      };
 }
 
 class TextExtra {
@@ -564,26 +564,26 @@ class TextExtra {
   String toRawJson() => json.encode(toJson());
 
   factory TextExtra.fromJson(Map<String, dynamic> json) => TextExtra(
-    awemeId: json["awemeId"],
-    end: json["end"],
-    hashtagId: json["hashtagId"],
-    hashtagName: json["hashtagName"],
-    isCommerce: json["isCommerce"],
-    start: json["start"],
-    subType: json["subType"],
-    type: json["type"],
-  );
+        awemeId: json["awemeId"],
+        end: json["end"],
+        hashtagId: json["hashtagId"],
+        hashtagName: json["hashtagName"],
+        isCommerce: json["isCommerce"],
+        start: json["start"],
+        subType: json["subType"],
+        type: json["type"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "awemeId": awemeId,
-    "end": end,
-    "hashtagId": hashtagId,
-    "hashtagName": hashtagName,
-    "isCommerce": isCommerce,
-    "start": start,
-    "subType": subType,
-    "type": type,
-  };
+        "awemeId": awemeId,
+        "end": end,
+        "hashtagId": hashtagId,
+        "hashtagName": hashtagName,
+        "isCommerce": isCommerce,
+        "start": start,
+        "subType": subType,
+        "type": type,
+      };
 }
 
 class ItemControl {
@@ -599,12 +599,12 @@ class ItemControl {
   String toRawJson() => json.encode(toJson());
 
   factory ItemControl.fromJson(Map<String, dynamic> json) => ItemControl(
-    canRepost: json["can_repost"],
-  );
+        canRepost: json["can_repost"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "can_repost": canRepost,
-  };
+        "can_repost": canRepost,
+      };
 }
 
 class Music {
@@ -641,36 +641,36 @@ class Music {
   String toRawJson() => json.encode(toJson());
 
   factory Music.fromJson(Map<String, dynamic> json) => Music(
-    authorName: json["authorName"],
-    collected: json["collected"],
-    coverLarge: json["coverLarge"],
-    coverMedium: json["coverMedium"],
-    coverThumb: json["coverThumb"],
-    duration: json["duration"],
-    id: json["id"],
-    original: json["original"],
-    playUrl: json["playUrl"],
-    preciseDuration: json["preciseDuration"] == null
-        ? null
-        : PreciseDuration.fromJson(json["preciseDuration"]),
-    scheduleSearchTime: json["scheduleSearchTime"],
-    title: json["title"],
-  );
+        authorName: json["authorName"],
+        collected: json["collected"],
+        coverLarge: json["coverLarge"],
+        coverMedium: json["coverMedium"],
+        coverThumb: json["coverThumb"],
+        duration: json["duration"],
+        id: json["id"],
+        original: json["original"],
+        playUrl: json["playUrl"],
+        preciseDuration: json["preciseDuration"] == null
+            ? null
+            : PreciseDuration.fromJson(json["preciseDuration"]),
+        scheduleSearchTime: json["scheduleSearchTime"],
+        title: json["title"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "authorName": authorName,
-    "collected": collected,
-    "coverLarge": coverLarge,
-    "coverMedium": coverMedium,
-    "coverThumb": coverThumb,
-    "duration": duration,
-    "id": id,
-    "original": original,
-    "playUrl": playUrl,
-    "preciseDuration": preciseDuration?.toJson(),
-    "scheduleSearchTime": scheduleSearchTime,
-    "title": title,
-  };
+        "authorName": authorName,
+        "collected": collected,
+        "coverLarge": coverLarge,
+        "coverMedium": coverMedium,
+        "coverThumb": coverThumb,
+        "duration": duration,
+        "id": id,
+        "original": original,
+        "playUrl": playUrl,
+        "preciseDuration": preciseDuration?.toJson(),
+        "scheduleSearchTime": scheduleSearchTime,
+        "title": title,
+      };
 }
 
 class PreciseDuration {
@@ -700,11 +700,11 @@ class PreciseDuration {
       );
 
   Map<String, dynamic> toJson() => {
-    "preciseAuditionDuration": preciseAuditionDuration,
-    "preciseDuration": preciseDuration,
-    "preciseShootDuration": preciseShootDuration,
-    "preciseVideoDuration": preciseVideoDuration,
-  };
+        "preciseAuditionDuration": preciseAuditionDuration,
+        "preciseDuration": preciseDuration,
+        "preciseShootDuration": preciseShootDuration,
+        "preciseVideoDuration": preciseVideoDuration,
+      };
 }
 
 class Stats {
@@ -727,20 +727,20 @@ class Stats {
   String toRawJson() => json.encode(toJson());
 
   factory Stats.fromJson(Map<String, dynamic> json) => Stats(
-    collectCount: json["collectCount"],
-    commentCount: json["commentCount"],
-    diggCount: json["diggCount"],
-    playCount: json["playCount"],
-    shareCount: json["shareCount"],
-  );
+        collectCount: json["collectCount"],
+        commentCount: json["commentCount"],
+        diggCount: json["diggCount"],
+        playCount: json["playCount"],
+        shareCount: json["shareCount"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "collectCount": collectCount,
-    "commentCount": commentCount,
-    "diggCount": diggCount,
-    "playCount": playCount,
-    "shareCount": shareCount,
-  };
+        "collectCount": collectCount,
+        "commentCount": commentCount,
+        "diggCount": diggCount,
+        "playCount": playCount,
+        "shareCount": shareCount,
+      };
 }
 
 class StatsV2 {
@@ -765,22 +765,22 @@ class StatsV2 {
   String toRawJson() => json.encode(toJson());
 
   factory StatsV2.fromJson(Map<String, dynamic> json) => StatsV2(
-    collectCount: json["collectCount"],
-    commentCount: json["commentCount"],
-    diggCount: json["diggCount"],
-    playCount: json["playCount"],
-    repostCount: json["repostCount"],
-    shareCount: json["shareCount"],
-  );
+        collectCount: json["collectCount"],
+        commentCount: json["commentCount"],
+        diggCount: json["diggCount"],
+        playCount: json["playCount"],
+        repostCount: json["repostCount"],
+        shareCount: json["shareCount"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "collectCount": collectCount,
-    "commentCount": commentCount,
-    "diggCount": diggCount,
-    "playCount": playCount,
-    "repostCount": repostCount,
-    "shareCount": shareCount,
-  };
+        "collectCount": collectCount,
+        "commentCount": commentCount,
+        "diggCount": diggCount,
+        "playCount": playCount,
+        "repostCount": repostCount,
+        "shareCount": shareCount,
+      };
 }
 
 class Video {
@@ -841,75 +841,75 @@ class Video {
   String toRawJson() => json.encode(toJson());
 
   factory Video.fromJson(Map<String, dynamic> json) => Video(
-    vqScore: json["VQScore"],
-    bitrate: json["bitrate"],
-    bitrateInfo: json["bitrateInfo"] == null
-        ? []
-        : List<BitrateInfo>.from(
-        json["bitrateInfo"]!.map((x) => BitrateInfo.fromJson(x))),
-    codecType: json["codecType"],
-    cover: json["cover"],
-    definition: json["definition"],
-    downloadAddr: json["downloadAddr"],
-    duration: json["duration"],
-    dynamicCover: json["dynamicCover"],
-    encodeUserTag: json["encodeUserTag"],
-    encodedType: json["encodedType"],
-    format: json["format"],
-    height: json["height"],
-    id: json["id"],
-    originCover: json["originCover"],
-    playAddr: json["playAddr"],
-    ratio: json["ratio"],
-    reflowCover: json["reflowCover"],
-    shareCover: json["shareCover"] == null
-        ? []
-        : List<String>.from(json["shareCover"]!.map((x) => x)),
-    subtitleInfos: json["subtitleInfos"] == null
-        ? []
-        : List<dynamic>.from(json["subtitleInfos"]!.map((x) => x)),
-    videoQuality: json["videoQuality"],
-    volumeInfo: json["volumeInfo"] == null
-        ? null
-        : VolumeInfo.fromJson(json["volumeInfo"]),
-    width: json["width"],
-    zoomCover: Map.from(json["zoomCover"]!)
-        .map((k, v) => MapEntry<String, String>(k, v)),
-  );
+        vqScore: json["VQScore"],
+        bitrate: json["bitrate"],
+        bitrateInfo: json["bitrateInfo"] == null
+            ? []
+            : List<BitrateInfo>.from(
+                json["bitrateInfo"]!.map((x) => BitrateInfo.fromJson(x))),
+        codecType: json["codecType"],
+        cover: json["cover"],
+        definition: json["definition"],
+        downloadAddr: json["downloadAddr"],
+        duration: json["duration"],
+        dynamicCover: json["dynamicCover"],
+        encodeUserTag: json["encodeUserTag"],
+        encodedType: json["encodedType"],
+        format: json["format"],
+        height: json["height"],
+        id: json["id"],
+        originCover: json["originCover"],
+        playAddr: json["playAddr"],
+        ratio: json["ratio"],
+        reflowCover: json["reflowCover"],
+        shareCover: json["shareCover"] == null
+            ? []
+            : List<String>.from(json["shareCover"]!.map((x) => x)),
+        subtitleInfos: json["subtitleInfos"] == null
+            ? []
+            : List<dynamic>.from(json["subtitleInfos"]!.map((x) => x)),
+        videoQuality: json["videoQuality"],
+        volumeInfo: json["volumeInfo"] == null
+            ? null
+            : VolumeInfo.fromJson(json["volumeInfo"]),
+        width: json["width"],
+        zoomCover: Map.from(json["zoomCover"]!)
+            .map((k, v) => MapEntry<String, String>(k, v)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "VQScore": vqScore,
-    "bitrate": bitrate,
-    "bitrateInfo": bitrateInfo == null
-        ? []
-        : List<dynamic>.from(bitrateInfo!.map((x) => x.toJson())),
-    "codecType": codecType,
-    "cover": cover,
-    "definition": definition,
-    "downloadAddr": downloadAddr,
-    "duration": duration,
-    "dynamicCover": dynamicCover,
-    "encodeUserTag": encodeUserTag,
-    "encodedType": encodedType,
-    "format": format,
-    "height": height,
-    "id": id,
-    "originCover": originCover,
-    "playAddr": playAddr,
-    "ratio": ratio,
-    "reflowCover": reflowCover,
-    "shareCover": shareCover == null
-        ? []
-        : List<dynamic>.from(shareCover!.map((x) => x)),
-    "subtitleInfos": subtitleInfos == null
-        ? []
-        : List<dynamic>.from(subtitleInfos!.map((x) => x)),
-    "videoQuality": videoQuality,
-    "volumeInfo": volumeInfo?.toJson(),
-    "width": width,
-    "zoomCover":
-    Map.from(zoomCover!).map((k, v) => MapEntry<String, dynamic>(k, v)),
-  };
+        "VQScore": vqScore,
+        "bitrate": bitrate,
+        "bitrateInfo": bitrateInfo == null
+            ? []
+            : List<dynamic>.from(bitrateInfo!.map((x) => x.toJson())),
+        "codecType": codecType,
+        "cover": cover,
+        "definition": definition,
+        "downloadAddr": downloadAddr,
+        "duration": duration,
+        "dynamicCover": dynamicCover,
+        "encodeUserTag": encodeUserTag,
+        "encodedType": encodedType,
+        "format": format,
+        "height": height,
+        "id": id,
+        "originCover": originCover,
+        "playAddr": playAddr,
+        "ratio": ratio,
+        "reflowCover": reflowCover,
+        "shareCover": shareCover == null
+            ? []
+            : List<dynamic>.from(shareCover!.map((x) => x)),
+        "subtitleInfos": subtitleInfos == null
+            ? []
+            : List<dynamic>.from(subtitleInfos!.map((x) => x)),
+        "videoQuality": videoQuality,
+        "volumeInfo": volumeInfo?.toJson(),
+        "width": width,
+        "zoomCover":
+            Map.from(zoomCover!).map((k, v) => MapEntry<String, dynamic>(k, v)),
+      };
 }
 
 class BitrateInfo {
@@ -935,24 +935,24 @@ class BitrateInfo {
   String toRawJson() => json.encode(toJson());
 
   factory BitrateInfo.fromJson(Map<String, dynamic> json) => BitrateInfo(
-    bitrate: json["Bitrate"],
-    codecType: json["CodecType"],
-    gearName: json["GearName"],
-    mvmaf: json["MVMAF"],
-    playAddr: json["PlayAddr"] == null
-        ? null
-        : PlayAddr.fromJson(json["PlayAddr"]),
-    qualityType: json["QualityType"],
-  );
+        bitrate: json["Bitrate"],
+        codecType: json["CodecType"],
+        gearName: json["GearName"],
+        mvmaf: json["MVMAF"],
+        playAddr: json["PlayAddr"] == null
+            ? null
+            : PlayAddr.fromJson(json["PlayAddr"]),
+        qualityType: json["QualityType"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "Bitrate": bitrate,
-    "CodecType": codecType,
-    "GearName": gearName,
-    "MVMAF": mvmaf,
-    "PlayAddr": playAddr?.toJson(),
-    "QualityType": qualityType,
-  };
+        "Bitrate": bitrate,
+        "CodecType": codecType,
+        "GearName": gearName,
+        "MVMAF": mvmaf,
+        "PlayAddr": playAddr?.toJson(),
+        "QualityType": qualityType,
+      };
 }
 
 class PlayAddr {
@@ -982,29 +982,29 @@ class PlayAddr {
   String toRawJson() => json.encode(toJson());
 
   factory PlayAddr.fromJson(Map<String, dynamic> json) => PlayAddr(
-    dataSize: json["DataSize"],
-    fileCs: json["FileCs"],
-    fileHash: json["FileHash"],
-    height: json["Height"],
-    uri: json["Uri"],
-    urlKey: json["UrlKey"],
-    urlList: json["UrlList"] == null
-        ? []
-        : List<String>.from(json["UrlList"]!.map((x) => x)),
-    width: json["Width"],
-  );
+        dataSize: json["DataSize"],
+        fileCs: json["FileCs"],
+        fileHash: json["FileHash"],
+        height: json["Height"],
+        uri: json["Uri"],
+        urlKey: json["UrlKey"],
+        urlList: json["UrlList"] == null
+            ? []
+            : List<String>.from(json["UrlList"]!.map((x) => x)),
+        width: json["Width"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "DataSize": dataSize,
-    "FileCs": fileCs,
-    "FileHash": fileHash,
-    "Height": height,
-    "Uri": uri,
-    "UrlKey": urlKey,
-    "UrlList":
-    urlList == null ? [] : List<dynamic>.from(urlList!.map((x) => x)),
-    "Width": width,
-  };
+        "DataSize": dataSize,
+        "FileCs": fileCs,
+        "FileHash": fileHash,
+        "Height": height,
+        "Uri": uri,
+        "UrlKey": urlKey,
+        "UrlList":
+            urlList == null ? [] : List<dynamic>.from(urlList!.map((x) => x)),
+        "Width": width,
+      };
 }
 
 class VolumeInfo {
@@ -1022,14 +1022,14 @@ class VolumeInfo {
   String toRawJson() => json.encode(toJson());
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
-    loudness: json["Loudness"]?.toDouble(),
-    peak: json["Peak"],
-  );
+        loudness: json["Loudness"]?.toDouble(),
+        peak: json["Peak"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "Loudness": loudness,
-    "Peak": peak,
-  };
+        "Loudness": loudness,
+        "Peak": peak,
+      };
 }
 
 class ShareMeta {
@@ -1047,14 +1047,14 @@ class ShareMeta {
   String toRawJson() => json.encode(toJson());
 
   factory ShareMeta.fromJson(Map<String, dynamic> json) => ShareMeta(
-    desc: json["desc"],
-    title: json["title"],
-  );
+        desc: json["desc"],
+        title: json["title"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "desc": desc,
-    "title": title,
-  };
+        "desc": desc,
+        "title": title,
+      };
 }
 
 class Album {
@@ -1073,22 +1073,22 @@ class Album {
   String toRawJson() => json.encode(toJson());
 
   factory Album.fromJson(Map<String, dynamic> json) => Album(
-    name: json["name"],
-    artist: json["artist"] == null
-        ? null
-        : ArtistClass.fromJson(json["artist"]),
-    tracks: json["tracks"] == null
-        ? []
-        : List<Track>.from(json["tracks"]!.map((x) => Track.fromJson(x))),
-  );
+        name: json["name"],
+        artist: json["artist"] == null
+            ? null
+            : ArtistClass.fromJson(json["artist"]),
+        tracks: json["tracks"] == null
+            ? []
+            : List<Track>.from(json["tracks"]!.map((x) => Track.fromJson(x))),
+      );
 
   Map<String, dynamic> toJson() => {
-    "name": name,
-    "artist": artist?.toJson(),
-    "tracks": tracks == null
-        ? []
-        : List<dynamic>.from(tracks!.map((x) => x.toJson())),
-  };
+        "name": name,
+        "artist": artist?.toJson(),
+        "tracks": tracks == null
+            ? []
+            : List<dynamic>.from(tracks!.map((x) => x.toJson())),
+      };
 }
 
 class ArtistClass {
@@ -1108,19 +1108,19 @@ class ArtistClass {
   String toRawJson() => json.encode(toJson());
 
   factory ArtistClass.fromJson(Map<String, dynamic> json) => ArtistClass(
-    name: json["name"],
-    founded: json["founded"],
-    members: json["members"] == null
-        ? []
-        : List<String>.from(json["members"]!.map((x) => x)),
-  );
+        name: json["name"],
+        founded: json["founded"],
+        members: json["members"] == null
+            ? []
+            : List<String>.from(json["members"]!.map((x) => x)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "name": name,
-    "founded": founded,
-    "members":
-    members == null ? [] : List<dynamic>.from(members!.map((x) => x)),
-  };
+        "name": name,
+        "founded": founded,
+        "members":
+            members == null ? [] : List<dynamic>.from(members!.map((x) => x)),
+      };
 }
 
 class Track {
@@ -1137,12 +1137,12 @@ class Track {
   String toRawJson() => json.encode(toJson());
 
   factory Track.fromJson(Map<String, dynamic> json) => Track(
-    name: json["name"],
-    duration: json["duration"],
-  );
+        name: json["name"],
+        duration: json["duration"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "name": name,
-    "duration": duration,
-  };
+        "name": name,
+        "duration": duration,
+      };
 }

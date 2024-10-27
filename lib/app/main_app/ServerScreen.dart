@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../downloading/DownloadProvider.dart';
 import '../../downloading/VideoInfoProvider.dart';
-import '../../downloading/ticktok/TickTokProfile.dart';
-import '../../downloading/ticktok/ticktok.dart';
 import '../items/VideoInfo.dart';
 
-class ScreenMain extends StatelessWidget {
-  final TextEditingController urlController = TextEditingController(
-      text: 'https://www.dailymotion.com/video/x96znmc');
+class ServerScreen extends StatelessWidget {
+  final TextEditingController urlController =
+      TextEditingController(text: 'https://www.dailymotion.com/video/x96znmc');
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +32,7 @@ class ScreenMain extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () async {
-                    main();
-
-                   // videoInfoProvider.fetchVideoInfo(urlController.text);
+                    videoInfoProvider.fetchVideoInfo(urlController.text);
                   },
                   child: const Text('Fetch Video Info'),
                 ),
@@ -77,7 +73,8 @@ class ScreenMain extends StatelessWidget {
       itemCount: videoInfo.formats.length,
       itemBuilder: (BuildContext context, int index) {
         bool isDownloading = downloadProvider.downloadingIndex == index;
-        bool isAnotherDownloading = downloadProvider.downloadingIndex != null && downloadProvider.downloadingIndex != index;
+        bool isAnotherDownloading = downloadProvider.downloadingIndex != null &&
+            downloadProvider.downloadingIndex != index;
 
         bool audioFounded = videoInfo.formats[index]['has_audio'] ?? false;
         bool videoFounded = videoInfo.formats[index]['has_video'] ?? false;

@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'app/main_app/ScreenDownloaded.dart';
-import 'app/main_app/ScreenMain.dart';
+import 'app/main_app/ServerScreen.dart';
 import 'app/main_app/ScreenProgress.dart';
+import 'app/main_app/TickTokScreen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -22,7 +23,7 @@ class HomeScreen extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            ScreenMain(), // First Tab
+            TikTokScreen(), // First Tab
             ScreenDownloaded(), // Second Tab
             ScreenProgress(), // Third Tab
           ],
